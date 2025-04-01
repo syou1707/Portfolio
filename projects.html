@@ -3,55 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Font Awesome Icons -->
-    <a href="#" class="fa fa-linkedin"></a>
-    <a href="#" class="fa fa-github"></a>
-    <a href="#" class="fa fa-envelope"></a>
-
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">SYOU</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="music.html">Music</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        </nav>
-    </header>
+    <div id="navbar-container"></div>
 
     <section class="intro">
         <div class="intro-content">
-            <p>Hi there!</p>
-            <h1>I'm Sherry You</h1>
-
-            <!-- Social Media Links -->
-            <div class="social-links">
-                <a href="#" class="fa fa-envelope"></a>
-                <a href="https://www.linkedin.com/in/sherry-you/" class="fa fa-linkedin" target="_blank"></a>
-                <a href="https://github.com/syou1707/Sherry-You-Data-Science-Portfolio" class="fa fa-github" target="_blank"></a>
-            </div>
+            <h1>Projects</h1>
         </div>
-
-    </section>
-
-    <section class="about">
-        <h2>About Me</h2>
-        <p>This is where your introduction goes.</p>
     </section>
 
     <section class="projects">
-        <h2>My Projects</h2>
         <div class="project-cards">
             <a href="/Projects/SNA.html" class="card-link">
                 <div class="card">
@@ -87,10 +51,19 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Sherry You. All rights reserved.</p>
-    </footer>
+    <div id="footer-container"></div>
 
     <script src="script.js"></script>
+
+    <script>
+        // Load navbar.html into the navbar-container
+        fetch("../navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar-container").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading navbar:", error));
+    </script>
+
 </body>
 </html>
